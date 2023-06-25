@@ -1,0 +1,25 @@
+{{define "index"}}
+
+{{template "header"}}
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading"> Главная Страница </h1>
+        <p class="lead">Тест сюда можно писать Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorem, quidem. A ad aliquam aliquid blanditiis corporis cumque dignissimos dolore expedita, maiores numquam obcaecati optio quae quod repellat sapiente similique.</p>
+        {{range .}}
+            <div class="alert alert-danger">
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Anons }}</p>
+            <a href="/post/{{ .Id }}" class="btn btn-danger">Читать далее</a>
+            </div>
+        {{else}}
+        <p class="lead>">Статей нет нечего выводить</p>
+        {{end}}
+
+        <p class="lead">
+            <a href="#" class="btn btn-lg btn-secondary">Узнать больше</a>
+        </p>
+    </main>
+
+{{template "footer"}}
+{{end}}
+
+
