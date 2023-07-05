@@ -24,7 +24,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, err.Error())
 	}
 
-	db, err := sql.Open("mysql", "root:root@tcp(127.0.0.1:8889)/golang_users") // подключаемся к БД рот рот это лог пар
+	db, err := sql.Open("mysql", "db_user:db_user_pass@tcp(193.17.92.177:3306)/app_db") // подключаемся к БД рот рот это лог пар
 	if err != nil {
 		panic(err)
 	}
@@ -67,7 +67,7 @@ func save_arcticle(w http.ResponseWriter, r *http.Request) {
 		//http.Redirect(w, r, "/create/", http.StatusSeeOther)
 	} else {
 
-		db, err := sql.Open("mysql", "root:root@tcp(127.0.0.1:8889)/golang_users") // подключаемся к БД рот рот это лог пар
+		db, err := sql.Open("mysql", "db_user:db_user_pass@tcp(193.17.92.177:3306)/app_db") // подключаемся к БД рот рот это лог пар
 		if err != nil {
 			panic(err)
 		}
@@ -88,7 +88,7 @@ func show_post(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	//w.WriteHeader(http.StatusOK)
 	//fmt.Fprintf(w, "ID: %v\n", vars["id"]) // сюда пишем такой же id  кка и написаали в rtr. post/{id...}
-	db, err := sql.Open("mysql", "root:root@tcp(127.0.0.1:8889)/golang_users") // подключаемся к БД рот рот это лог пар
+	db, err := sql.Open("mysql", "db_user:db_user_pass@tcp(193.17.92.177:3306)/app_db") // подключаемся к БД рот рот это лог пар
 	if err != nil {
 		panic(err)
 	}
