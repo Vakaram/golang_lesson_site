@@ -128,7 +128,7 @@ func hendleFunc() {
 
 	http.Handle("/", rtr)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
-	http.ListenAndServe("localhost:8080", nil)
+	http.ListenAndServe("193.17.92.177:1111", nil)
 
 }
 
